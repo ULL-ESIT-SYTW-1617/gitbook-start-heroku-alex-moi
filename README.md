@@ -7,7 +7,7 @@ Ofrece la posibilidad de desplegar en **heroku** nuestra aplicación.
 ## Instalación
 
 Este paquete se instala con el siguiente comando:
-```npm install -g gitbook-start-heroku-es-alex-moi```
+```npm install -g gitbook-start-heroku-alex-moi```
 
 
 ## Descripción del paquete
