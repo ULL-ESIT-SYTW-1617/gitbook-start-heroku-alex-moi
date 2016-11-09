@@ -2,12 +2,12 @@
 //var exec = require("ssh-exec");
 var fs = require('fs');
 var path = require('path');
-const GitUrlParse = require("git-url-parse");
 var child = require("child_process");
-var exec = require('child_process').exec;
+
 
 function initialize(directorio) {
-    console.log("\nmodulo initialize");
+    console.log("\n============ INSTALANDO DEPENDENCIAS GITBOOK-START-HEROKU ============")
+    console.log("\nEspere mientras el proceso termina ...")
 
     var contenido='\ngulp.task("deploy-heroku", function () {'+ 
         '\n\tvar heroku = require("gitbook-start-heroku-alex-moi");'+
@@ -15,9 +15,6 @@ function initialize(directorio) {
         
         '\n\n\ heroku.deploy();'+
         '\n});\n\n';
-
-    
-    fs.existsSync(path.join(process.cwd(), 'node_modules','gitbook-start-alex-moi-nitesh','gulpfile.js')) ? console.log("Existe") : console.log("No existe");
     
     
     //añadimos la tarea
@@ -25,23 +22,18 @@ function initialize(directorio) {
         if (err) {
             return console.error(err);
         }
-        console.log("Añadiendo tarea gulp")
     });
     
     //copiamos gulpfile a nuestro directorio
     fs.copyFile(path.join(process.cwd(), 'node_modules','gitbook-start-alex-moi-nitesh','gulpfile.js'), path.join(process.cwd(), directorio , 'gulpfile.js'),function(err){
         if(err)
           console.log(err);
-         console.log("Tarea gulp HEROKU añadida a gulpfile")
     });
-    
-    console.log("\nInstalando plugin para despliegue en HEROKU, espere por favor ...");
     
     
     fs.copyFile(path.join(process.cwd(), 'node_modules','gitbook-start-alex-moi-nitesh','template','Procfile'), path.join(process.cwd(), directorio , 'Procfile'),function(err){
         if(err)
           console.log(err);
-         console.log("Añadiendo archivo Procfile");
     });
     
      fs.copyFileSync(path.join(process.cwd(), 'node_modules','gitbook-start-alex-moi-nitesh','template','.env'), path.join(process.cwd(), directorio , '.env'),function(err){
