@@ -18,25 +18,25 @@ function initialize(directorio) {
     
     
     //añadimos la tarea
-    fs.writeFileSync(path.join(process.cwd(), 'node_modules','gitbook-start-alex-moi-nitesh','gulpfile.js'), contenido,  {'flag':'a'},  function(err) {
+    fs.writeFileSync(path.resolve(__dirname, 'node_modules','gitbook-start-alex-moi-nitesh','gulpfile.js'), contenido,  {'flag':'a'},  function(err) {
         if (err) {
             return console.error(err);
         }
     });
     
     //copiamos gulpfile a nuestro directorio
-    fs.copyFile(path.join(process.cwd(), 'node_modules','gitbook-start-alex-moi-nitesh','gulpfile.js'), path.join(process.cwd(), directorio , 'gulpfile.js'),function(err){
+    fs.copyFile(path.resolve(__dirname, 'node_modules','gitbook-start-alex-moi-nitesh','gulpfile.js'), path.join(process.cwd(), directorio , 'gulpfile.js'),function(err){
         if(err)
           console.log(err);
     });
     
     
-    fs.copyFile(path.join(process.cwd(), 'node_modules','gitbook-start-alex-moi-nitesh','template','Procfile'), path.join(process.cwd(), directorio , 'Procfile'),function(err){
+    fs.copyFile(path.resolve(__dirname, 'node_modules','gitbook-start-alex-moi-nitesh','template','Procfile'), path.join(process.cwd(), directorio , 'Procfile'),function(err){
         if(err)
           console.log(err);
     });
     
-     fs.copyFileSync(path.join(process.cwd(), 'node_modules','gitbook-start-alex-moi-nitesh','template','.env'), path.join(process.cwd(), directorio , '.env'),function(err){
+     fs.copyFileSync(path.resolve(__dirname, 'node_modules','gitbook-start-alex-moi-nitesh','template','.env'), path.join(process.cwd(), directorio , '.env'),function(err){
         if(err)
           console.log(err);
       });
