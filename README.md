@@ -6,9 +6,13 @@ Ofrece la posibilidad de desplegar en **heroku** nuestra aplicación.
 
 ## Instalación
 
-Este paquete se instala con el siguiente comando:
-```npm install -g gitbook-start-heroku-alex-moi```
+**Debemos tener** instalado el paquete principal en **global**. Con esto hecho no es necesario instalar el paquete plugin heroku puesto que al ejecutar la aplicación de la forma que se expone a continuación, ésta lo instala por nosotros.
+Por tanto, ejecutamos desde el directorio de nuestro gitbook:
+```shell
+gitbook-start-alex-moi-nitesh -d heroku
+```
 
+Para más información sobre las opciones que permite el paquete principal, acuda a su documentación en [gitbook-start-alex-moi-nitesh](https://github.com/ULL-ESIT-SYTW-1617/nueva-funcionalidad-para-el-paquete-npm-plugins-alex-moi).
 
 ## Descripción del paquete
 
@@ -17,14 +21,10 @@ El paquete cuenta con dos métodos, **intialize()** y **deploy()**. El primero, 
 
 ## Funcionamiento
 
-El plugin funciona eligiendo la opción `-d heroku`. Es decir, ejecutando desde el directorio que contiene el gitbook el comando:
-* `gitbook-start-alex-moi-nitesh -d heroku`
-
-Para más información sobre las opciones que permite el paquete principal, acuda a su documentación en [gitbook-start-alex-moi-nitesh](https://github.com/ULL-ESIT-SYTW-1617/nueva-funcionalidad-para-el-paquete-npm-plugins-alex-moi).
+Después de haber ejecutado el comando del paso de **Instalación**, se instalará el paquete gitbook-start-heroku-alex-moi automaticamente y ya podremos desplegar en heroku.
 
 
-
-A continuación siga los siguientes pasos(Dentro del directorio del GitBook):
+A continuación siga los siguientes pasos (Dentro del directorio del GitBook):
 	
 1. Autenticarse en heroku `heroku login`
 2. `npm install`
